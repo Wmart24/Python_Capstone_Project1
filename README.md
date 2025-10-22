@@ -1,7 +1,7 @@
 # Overview
 Explore my analysis of the data job market with a focus on Data Science roles. This project was designed to deepen my understanding of current industry trends while strengthening my Python skills through hands-on data analysis. It examines the highest-paying and most in-demand skills to uncover which areas offer the best opportunities for Data Scientists.
 
-The dataset comes from [Luke Barousse's Python Course](https://www.lukebarousse.com/python), which provides comprehensive information on job titles, salaries, locations, and required skills. Through this analysis, I address key questions about the most sought-after skills, salary distributions, and where demand and compensation intersect in the field of Data Science.
+The 2023 dataset comes from [Luke Barousse's Python Course](https://www.lukebarousse.com/python), which provides comprehensive information on job titles, salaries, locations, and required skills. Through this analysis, I address key questions about the most sought-after skills, salary distributions, and where demand and compensation intersect in the field of Data Science.
 
 # The Questions
 Below are the questions I want to answer in my project:
