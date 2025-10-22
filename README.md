@@ -80,7 +80,7 @@ View my notebook with detailed steps here: [4_Salary_Analysis.ipynb](3_Project/4
 ### Visualize Data
 
 #### Results
-![Salary Distributions for Data Jobs in the US](3_Project/images/salary_distribution.png)
+![Salary Distributions for Data Jobs in the US](3_Project/images/salary_box_plot.png)
 *Box plot visualizing the salary distribution for the top 6 data job titles*
 
 #### Insights
