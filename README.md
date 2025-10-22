@@ -1,4 +1,56 @@
+# Overview
+Explore my analysis of the data job market with a focus on Data Science roles. This project was designed to deepen my understanding of current industry trends while strengthening my Python skills through hands-on data analysis. It examines the highest-paying and most in-demand skills to uncover which areas offer the best opportunities for Data Scientists.
+
+The dataset comes from [Luke Barousse's Python Course](https://www.lukebarousse.com/python), which provides comprehensive information on job titles, salaries, locations, and required skills. Through this analysis, I address key questions about the most sought-after skills, salary distributions, and where demand and compensation intersect in the field of Data Science.
+
+# The Questions
+Below are the questions I want to answer in my project:
+
+1. What are the skills most in demand for the top 3 most popular data roles?
+2. How are in-demand skills trending for Data Scientists?
+3. How well do jobs and skills pay for Data Scientists?
+4. What are the optimal skills for data scientists to learn?
+
+# Tools I Used
+In order to take a deep dive into the data science job market, I made use of several powerful tools:
+- Python: The foundation of my analysis, allowing me to analyze the data and find critial insights. I also used the following libraries:
+    - Pandas Library: This was used to analyze the data
+    - Matplotlib Library: Used to visualize the data
+    - Seaborn Library: Helped me create more advanced visuals 
+- Jupyter Notebooks: The tool I used to run my Python scripts which let me easily include my notes and analysis
+- Visual Studio Code: My main IDE for executing my Python scripts 
+- Git & GitHub: Essential for version control and sharing my Python code and analysis, ensuring collaboration and project tracking
+
+# Data Preparation and Cleanup 
+This section outlines the steps taken to prepare the data for analysis, ensuring accuracy and usability 
+
+## Import & Clean Up Data
+I start by importing libraries and loading the dataset, followed by initial date cleaning tasks to ensure data quality.
+
+```python
+# Importing Libraries
+import ast
+import pandas as pd
+import seaborn as sns
+from datasets import load_dataset
+import matplotlib.pyplot as plt
+
+# Loading Data
+dataset = load_dataset('lukebarousse/data_jobs')
+df = dataset['train'].to_pandas()
+
+# Data Cleanup
+df['job_posted_date'] = pd.to_datetime(df['job_posted_date'])
+df['job_skills'] = df['job_skills'].apply(lambda x: ast.literal_eval(x) if pd.notna(x) else x)
+```
+## Filter US Jobs
+```python
+df_US = df[df['job_country'] == 'United States' ]
+```
+
 # The Analysis
+
+Each Jupyter notebook for this project aimed at investigating specific aspects of the data job market. Here's how I approached each question: 
 
 ## 1. What are the most demanded skills for the top 3 most popular data roles?
 
@@ -157,3 +209,24 @@ plt.show()
 - Python and SQL dominate demand appearing in most data science roles, but offer moderate median salaries, reflecting their ubiquity and essential nature.
 - PyTorch and TensorFlow stand out as high salary, low demand skills, indicating strong pay premiums for deep learning specialization.
 - Analyst and cloud tools (e.g., Tableau, Power BI, AWS, Azure) occupy the middle ground, showing balanced job presence and solid pay, valuable for well rounded professionals.
+
+# What I Learned
+Through this project, I gained a deeper understanding of the Data Science job market while sharpening my Python skills in data manipulation and visualization. Below are some key takeaways from my work:
+- Advanced Python Usage: I strengthened my ability to use libraries such as Pandas for data manipulation and Seaborn and Matplotlib for visualization, enabling me to perform complex analyses more effectively.
+- Data Cleaning Importance: I learned that meticulous data cleaning and preparation are essential to ensure the accuracy and reliability of analytical results.
+- Strategic Skill Analysis: This project highlighted the importance of aligning technical skills with market demand. By analyzing the connection between skill popularity, salary levels, and job availability, I developed a more strategic perspective on career planning in the tech industry.
+
+# Insights 
+This project revealed several key insights into the data job market for analysts and data scientists:
+- Skill Demand and Salary Correlation: There is a clear correlation between the demand for specific skills and the salaries these skills commmand. Advanced and specialized skills often lead to higher salaries
+- Market Trends: The demand for specific skills is constantly shifting, reflecting the dynamic nature of the data industry. Staying informed about these changes is crucial for continued growth and relevance in the field.
+- Economic Value of Skills: Identifying skills that are both in high demand and well-compensated helps data professionals prioritize their learning and career development to maximize long-term economic value.
+
+# Challenges I Faced
+This project was not without its challenges, but it provided good learning opportunities:
+- Data Inconsistencies: Managing missing or inconsistent data required careful attention and robust cleaning techniques to preserve the accuracy and reliability of the analysis.
+- Complex Data Visualization: Creating clear and engaging visualizations from complex datasets proved challenging, especially when aiming to communicate insights effectively to different audiences.
+- Balancing Breadth and Depth: Striking the right balance between detailed exploration and a comprehensive overview was an ongoing challenge, requiring thoughtful judgment to maintain clarity without losing analytical depth.
+
+# Conclusion 
+This exploration of the data science job market has been highly insightful, revealing the key skills and emerging trends that define this rapidly evolving field. The findings not only deepened my own understanding but also offer practical guidance for anyone seeking to advance a career in data science or analytics. As the industry continues to evolve, ongoing analysis will be vital to staying competitive. This project serves as a strong foundation for future research and reinforces the importance of continuous learning and adaptability in the world of data.
